@@ -75,7 +75,7 @@ codereview-ai/
 ### Prerequisites
 
 - Python 3.11 or newer
-- An [Anthropic API key](https://console.anthropic.com/) (optional: without it the app still works, but AI explanations are disabled)
+- An [Gemini API key](https://console.anthropic.com/) (optional: without it the app still works, but AI explanations are disabled)
 - Git
 
 ### Installation

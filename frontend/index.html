@@ -2,9 +2,84 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#080b14">
+    <title>CodeReview AI — Better code, clearer feedback</title>
+    <link rel="stylesheet" href="/static/css/style.css">
 </head>
 <body>
+    <main class="app-shell">
+        <header class="topbar">
+            <a class="brand" href="/static/index.html" aria-label="CodeReview AI home">
+                <span class="brand-mark"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m8 9-3 3 3 3M16 9l3 3-3 3M14 5l-4 14"/></svg></span>
+                <span>CodeReview AI</span>
+            </a>
+            <nav class="nav-links" aria-label="Primary navigation">
+                <a class="nav-link active" href="/static/index.html">New review</a>
+                <a class="nav-link nav-link--accent" href="/static/history.html">My patterns</a>
+            </nav>
+        </header>
 
+        <section class="hero">
+            <div>
+                <span class="eyebrow"><span class="eyebrow-dot"></span> Your private review companion</span>
+                <h1>Write code with <span class="gradient-text">more confidence.</span></h1>
+                <p class="hero-copy">Paste a snippet, choose your review depth, and get clear, practical feedback you can use on your next commit.</p>
+                <div class="hero-trust">
+                    <span class="trust-item"><span class="trust-icon">✓</span> Actionable fixes</span>
+                    <span class="trust-item"><span class="trust-icon">✓</span> Security-aware</span>
+                    <span class="trust-item"><span class="trust-icon">✓</span> Built for learners</span>
+                </div>
+            </div>
+            <div class="orb" aria-hidden="true">
+                <div class="orb-code">&lt;/&gt;</div>
+                <div class="orb-chip orb-chip--one"><span class="chip-check">✓</span> Safe patterns</div>
+                <div class="orb-chip orb-chip--two"><span class="chip-check">✓</span> Clear fixes</div>
+            </div>
+        </section>
+
+        <section class="review-card" aria-labelledby="review-form-title">
+            <div class="card-titlebar">
+                <div class="card-title" id="review-form-title"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 11 12 14 22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg> Start a code review</div>
+                <span class="step-pill">Takes about a minute</span>
+            </div>
+            <div class="review-form">
+                <div class="form-row">
+                    <div class="field">
+                        <label for="language">Language</label>
+                        <select id="language">
+                            <option value="python">Python</option>
+                            <option value="javascript">JavaScript</option>
+                            <option value="html">HTML</option>
+                        </select>
+                    </div>
+                    <div class="field">
+                        <label for="reviewType">Review focus</label>
+                        <select id="reviewType">
+                            <option value="quick">Quick — security &amp; bug checks</option>
+                            <option value="full" selected>Full — all checks</option>
+                            <option value="security">Security only</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="field">
+                    <label for="code">Your code <span>Paste the section you’d like reviewed</span></label>
+                    <div class="editor-wrap"><textarea id="code" spellcheck="false" placeholder="Paste your code here…" aria-label="Code to review"></textarea></div>
+                </div>
+                <div class="field" style="margin-top:20px">
+                    <label for="requirements">Dependencies <span>Optional · requirements.txt for Python</span></label>
+                    <textarea class="requirements" id="requirements" spellcheck="false" placeholder="flask==3.0.0"></textarea>
+                </div>
+                <div class="form-footer">
+                    <span class="privacy-note"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="10" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg> Your review history stays tied to this browser.</span>
+                    <button id="scanBtn" class="primary-button button-wide">Review my code <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button>
+                </div>
+                <div id="error" class="form-error hidden" role="alert"></div>
+                <div id="loading" class="loading hidden"><span class="loader"></span> Looking through your code…</div>
+            </div>
+        </section>
+        <footer class="page-footer">See how you’re progressing over time <a class="text-link" href="/static/history.html">View your patterns →</a></footer>
+    </main>
+    <script src="/static/js/app.js"></script>
 </body>
 </html>

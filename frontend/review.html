@@ -2,9 +2,29 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#080b14">
+    <title>Review results — CodeReview AI</title>
+    <link rel="stylesheet" href="/static/css/style.css">
 </head>
 <body>
-
+    <main class="app-shell">
+        <header class="topbar">
+            <a class="brand" href="/static/index.html"><span class="brand-mark"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m8 9-3 3 3 3M16 9l3 3-3 3M14 5l-4 14"/></svg></span><span>CodeReview AI</span></a>
+            <nav class="nav-links"><a class="nav-link" href="/static/history.html">My patterns</a><a class="nav-link nav-link--accent" href="/static/index.html">New review</a></nav>
+        </header>
+        <section class="page-heading"><span class="eyebrow"><span class="eyebrow-dot"></span> Review complete</span><h1>Your code review</h1><p>Prioritized feedback to help you make the next change count.</p></section>
+        <section id="summary" class="summary-grid" aria-label="Review summary">
+            <div class="summary-cell"><span class="summary-label">Code score</span><strong class="summary-value" id="score">--</strong></div>
+            <div class="summary-cell"><span class="summary-label">Grade</span><strong class="summary-value" id="grade">--</strong></div>
+            <div class="summary-cell"><span class="summary-label">Issues found</span><strong class="summary-value" id="totalFindings">--</strong></div>
+            <div class="summary-cell"><span class="summary-label">AI analysis</span><strong class="summary-value summary-value--status" id="aiStatus">--</strong></div>
+        </section>
+        <section id="comparison" class="section-card hidden"><div class="section-header"><div><h2>Since your last review</h2><p>Track the impact of your fixes.</p></div></div><div class="comparison-grid"><div class="comparison-stat comparison-stat--green"><span>Resolved</span><strong id="resolvedCount">0</strong></div><div class="comparison-stat comparison-stat--yellow"><span>Still open</span><strong id="stillOpenCount">0</strong></div><div class="comparison-stat comparison-stat--red"><span>New issues</span><strong id="newCount">0</strong></div></div></section>
+        <section id="findings" class="section-card"><div class="section-header"><div><h2>Findings</h2><p>Work through the highest-impact items first.</p></div></div><div id="findingsList"></div></section>
+        <div class="action-row"><button id="downloadPdf" class="secondary-button">Download PDF report</button><button id="rescanBtn" class="primary-button">Re-submit fixed code <span>→</span></button></div>
+        <footer class="page-footer"><a class="text-link" href="/static/history.html">View your recurring patterns →</a></footer>
+    </main>
+    <script src="/static/js/review.js"></script>
 </body>
 </html>
